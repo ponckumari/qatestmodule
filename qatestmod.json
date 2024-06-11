@@ -68,8 +68,10 @@
         },
         "outcomes": [
                         {
+                          "id": "1",
                             "outcome": "Success",
                             "color": "#00FF00",
+                            "isDefault": false,
                             "rules": [
                                 {
                                     "id": "1",
@@ -78,51 +80,31 @@
                                     "valueSource": "value",
                                     "value": 21
                                 }
-                            ],
-                            "combinator": "or",
-                            "isDefault": false,
-                            "id": "2"
+                            ]
                         },
                         {
-                            
+                            "id": "2",
                             "outcome": "Fail",
                             "color": "#FF0000",
+                            "isDefault": false,
                             "rules": [
                                 {
-                                    "id": "2",
-                                    "field": "contect.result.advice.age",
+                                    
+                                   "field": "contect.result.advice.age",
                                     "operator": "<=",
                                     "valueSource": "value",
                                     "value": 21
                                 }
-                            ],
-                             "combinator": "or",
-                            "isDefault": false,
-                            "id": "3"
+                            ]
+                             
                               },
-                               {
-                            
-                            "outcome": "Review",
-                            "color": "#FFFF00",
-                            "rules": [
-                                {
-                                    "id": "3",
-                                    "field": "contect.result.advice.age",
-                                    "operator": "<=",
-                                    "valueSource": "value",
-                                    "value": 5
-                                }
-                               
-                            ],
-                            "combinator": "or",
-                            "isDefault": false
-                        },
                         {
+                            "color": "#FFFF00",
                             "isDefault": true,
                             "id": "default",
-                            "outcome": "Default",
-                            "rules": [],
-                            "combinator": "and"
+                            "outcome": "Review",
+                            "rules": []
+                            
                         }
                     ],
         "mainProcessRef": {
