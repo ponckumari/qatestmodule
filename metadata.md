@@ -100,7 +100,7 @@ export type Capability = {
    name:"context.result.advice.age", /* go variable name */
    label:"Age", /* capability name */
    description?:"Age of the person" /* capability description DISPLAY IS NOT MVP: optional tooltip? */
-   type: 'integer' | 'boolean' | 'enum' | 'enumset',
+   type: 'integer',
    defaultValue: ValueType /** may be array for multiselect */,
    values?: EnumValueEntry[]  /* Only when type is enum or enumset */
    range?: {min: number, max: integer} /* Later, NOT MVP */
