@@ -64,15 +64,15 @@ export type VariantInfo = {
    name: "Age Verification", /** from excel, en-us primary label **/
    description: "A bar owner wants to ensure that they are not serving alcoholic beverages to under age customer", /** from excel, en-us tooltip/help **/
    
-   deprecated?: boolean | string, /* default false */
-   hidden?: boolean, /* default false, if true, not ever actually displayed, just referenced*/
+   deprecated?: false | string, /* default false */
+   hidden?: false, /* default false, if true, not ever actually displayed, just referenced*/
    constraints?: Constraint[], /* additional constraints passed to compiler/renderer */
 
    tags: Record<string, string>, // just for selecting which variant in model config pane
    capabilities: Capability[],
    defaultRules: NamedAdviceMap, // MVP = only 1, add a drop-down later
 
-   mainProcessRef: "mainTestProcess",  // for compiler only
+   mainProcessRef: mainTestProcess,  // for compiler only
    configFormRef: GoTestConfigurationInput, 
    credentialFormRef: GoTestCredentialInputForm, // TODO for the UI (eventually), but also for the compiler
    inputFormRef: GoTestInformationInputForm,  // MVP+ to support field lifting
@@ -151,6 +151,7 @@ As specification of a boolean is more complete, use one entry per line but with 
 The Go Module Conformance Suite can map these into the correct format, while preserving notes and defaults. 
 
 ## Outcomes (Advice Templates)
+
 
 ## Non-Functional Data
 
