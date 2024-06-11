@@ -1,10 +1,4 @@
-# Module Metadata Specification
 
-Module metadata is used by the Go Platform Designer to render various UI components, and by the Compiler to translate the Module into BPMN. 
-
-Module Metadata MUST pass the Module conformance test suite schema and semantic validation. 
-
-## Metadata Overview 
 
 ```ts
 export type ModuleId = "identity-go-test-module";
@@ -46,18 +40,7 @@ type SelectorSpec = {
    // for use only by Go Platform team. reserved for MVP+
    exclusiveGatewayEdgeCondition?: string
 }
-```
 
-## General Module Information
-
-### Module Selectors
-
-#### Predefined Tags:
-
-## Module Variants
-
-The Module bundle contains one or more Variants as an array of `ModelConfig`. 
-```ts
 export type VariantInfo = {
    configId: "PM1", /** used across all systems to reference this profile as moduleId.configId **/
 
@@ -92,8 +75,6 @@ export type NamedAdviceMap = {
     rules: OutcomeGroupSpec[]
 }
 
-
-## Capabilities (Flags, Matches, and Scores)
 
 ```ts
 export type Capability = {
@@ -139,39 +120,5 @@ export type Capability = {
    }
 }
 
-```
-
-### Boolean Groups and Enumerated String Equivalence
-
-A group of boolean capabilities is functionally equivalent and lossless translatable to an enumerated set. 
-A one-hot group of boolean capabilities is functionally equivalent and lossless translatable to an enumerated set.
-
-As specification of a boolean is more complete, use one entry per line but with the notation `'enumerated_element'` or `'enumerated_set_element'` to build the group of enumerated values, rather than using carriage return character in excel. All entries should have the same variable name. 
-
-The Go Module Conformance Suite can map these into the correct format, while preserving notes and defaults. 
-
-## Outcomes (Advice Templates)
-
-
-## Non-Functional Data
-
-### Billing SKUs
-
-### Terms and Conditions
-
-Some forms of processing require legal terms and conditions to be agreed to by 
-the End Users. 
-
-
-### Support and Status Page
-
-When there is an issue with a module, Go Platform can return a support message 
-indicating what they should provide to tier-1 support. 
-
-```ts
-
-interface SupportInfo {
-    message: string, 
-}
 
 ```
