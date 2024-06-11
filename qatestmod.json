@@ -69,7 +69,7 @@
         "outcomes": [
                         {
                             "outcome": "Success",
-                            "color": "#6464D4",
+                            "color": "#00FF00",
                             "rules": [
                                 {
                                     "id": "1",
@@ -86,7 +86,7 @@
                         {
                             
                             "outcome": "Fail",
-                            "color": "#34ADA1",
+                            "color": "#FF0000",
                             "rules": [
                                 {
                                     "id": "2",
@@ -101,7 +101,7 @@
                                {
                             
                             "outcome": "Review",
-                            "color": "#34ADA1",
+                            "color": "#FFFF00",
                             "rules": [
                                 {
                                     "id": "3",
