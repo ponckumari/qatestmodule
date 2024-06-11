@@ -18,9 +18,6 @@ export type ModuleMetadata = { // One Excel Sheet
 
    category: "Age", // sorting in Module Library
 
-   display: PresentationInfo,
-   display_stack: PresentationInfo, // MVP+
-
    selectors: [], // for drawing dropdowns. default is to use the name
    defaultConfigId: "PM1",
    variantSelector?: "GLOBAL", /* for multicountry only */ 
@@ -53,14 +50,9 @@ type SelectorSpec = {
 
 ## General Module Information
 
-
-
-
 ### Module Selectors
 
-
 #### Predefined Tags:
-
 
 ## Module Variants
 
@@ -99,41 +91,6 @@ export type NamedAdviceMap = {
     description: string,
     rules: OutcomeGroupSpec[]
 }
-
-```
-
-The point of tags is to allow multiple dropdowns to be specified in the sidebar, 
-with a dropdown for each (as specified in the `selectors`)
-
-
-```yml
-tags:
-  displayName: "Simple USA Address+SSN+DOB" 
-  country: USA
-  variation: Simple
-  inputs: Address+SSN+DOB
-```
-
-### Constraints
-
-Constraints concern the placement of Modules on the canvas, and conditions which the compiler can check for. 
-
-Currently, the following constraints are defined:
-
-- `writes:identity` - this constraint indicates that the module writes to the identity space. Only one such module may execute at a time. 
-- `reads:identity.name` - this constraint indicates that the module reads from the normalized name field, meaning that the name must be present and normalized prior to processing
-
-## Credentials
-
-Each Module Config Variant *may* have zero or more credentials associated with it. 
-
-Go Platform associates a credentials form payload with the following dimensions:
-
-- `ORG_ID`: the customer or organization, implicit in credential assignment
-- `GO_REGION`: varies, but probably 'US', 'EU', 'AP'
-- `PROD_MODE`: either 'PRD' or 'STG'
-- `ModuleId.ConfigId`: defined here
-
 
 
 ## Capabilities (Flags, Matches, and Scores)
