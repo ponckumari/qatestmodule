@@ -1,0 +1,154 @@
+{
+  "id": "{{resourceId}}",
+  "name": "default-name",
+  "hash": "default-hash",
+  "version": "default-version",
+  "data": {
+  "name": "Age Verification",
+  "moduleId": "identity-go-test-module",
+  "version": "1.0.0",
+  "description": "Test Module to be used by GO team for synthetic monitoring",
+  "display": {
+    "icon": "lightbulb"
+  },
+  "keywords": "Test, Age, Data",
+  "category": "Age",
+  "selectors": "\"Age Verification\"",
+  "fileStorage": "NO",
+  "external": "NO",
+  "privacy": "YES",
+  "idscore": "NO",
+  "trust": "NO"
+},
+   
+    "selectors": [
+      {
+        "tag": "default-tag",
+        "label": "default-label",
+        "default": "default-default"
+      }
+    ],
+    "defaultConfigId": "default-configid",
+    "variantSelector": "GLOBAL",
+    "variants": [
+      {
+        "configId": "PM1",
+        "name": "Age Verification",
+        "description": "A bar owner wants to ensure that they are not serving alcoholic beverages to under age customer",
+        "deprecated": "default-deprecated",
+        "hidden": false,
+        "constraints": [
+          {}
+        ],
+        "tags": {},
+        "capabilities": [
+          {
+            "name": "context.result.advice.age",
+            "label": "Age",
+            "description": "Age of the Person",
+            "type": "integer",
+            "defaultValue": "default-default-value",
+            "values": [
+              {
+                "name": "default-name",
+                "label": "default-label",
+                "description": "default-description"
+              }
+            ],
+            "range": {
+              "min": 0,
+              "max": 100
+            }
+          }
+        ],
+        "defaultRules": {
+          "name": "default-name",
+          "description": "default-description",
+          "rules": []
+        },
+        "outcomes": [
+                        {
+                            "outcome": "Success",
+                            "color": "#6464D4",
+                            "rules": [
+                                {
+                                    "id": "1",
+                                    "field": "context.result.advice.age",
+                                    "operator": ">=",
+                                    "valueSource": "value",
+                                    "value": 21
+                                }
+                            ],
+                            "combinator": "or",
+                            "isDefault": false,
+                            "id": "2"
+                        },
+                        {
+                            
+                            "outcome": "Fail",
+                            "color": "#34ADA1",
+                            "rules": [
+                                {
+                                    "id": "2",
+                                    "field": "contect.result.advice.age",
+                                    "operator": "<=",
+                                    "valueSource": "value",
+                                    "value": 21
+                                },
+                             "combinator": "or",
+                            "isDefault": false,
+                            "id": "3"
+                               {
+                            
+                            "outcome": "Review",
+                            "color": "#34ADA1",
+                            "rules": [
+                                {
+                                    "id": "3",
+                                    "field": "contect.result.advice.age",
+                                    "operator": "<=",
+                                    "valueSource": "value",
+                                    "value": 5
+                                }
+                               
+                            ],
+                            "combinator": "or",
+                            "isDefault": false
+                        },
+                        {
+                            "isDefault": true,
+                            "id": "default",
+                            "outcome": "Default",
+                            "rules": [],
+                            "combinator": "and"
+                        }
+                    ],
+        "mainProcessRef": {
+          "formKey": "mainTestProcess"
+        },
+        "configFormRef": {
+          "formKey": "GoTestConfigurationInput"
+        },
+        "credentialFormRef": {
+          "formKey": "GoTestCredentialInputForm"
+        },
+        "inputFormRef": ["GoTestInformationInputForm"],
+        "credentialCheckProcessRef": {
+          "formKey": "default-form-key"
+        },
+        "skus": [],
+        "env": {},
+        "payload": {},
+        "regions": {},
+        "consent": [
+          {}
+        ]
+      }
+    ],
+    "files": [
+      {}
+    ],
+    "i18n": {},
+    "hidden": []
+  }
+}
