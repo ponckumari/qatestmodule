@@ -94,7 +94,8 @@
                                     "operator": "<=",
                                     "valueSource": "value",
                                     "value": 21
-                                },
+                                }
+                            ],
                              "combinator": "or",
                             "isDefault": false,
                             "id": "3"
@@ -151,5 +152,5 @@
     ],
     "i18n": {},
     "hidden": []
-  }
+  
 }
